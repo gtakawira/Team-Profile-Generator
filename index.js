@@ -3,8 +3,9 @@ const fs=require('fs')
 const chalk = require('chalk');
 const job= require('./lib/classes');
 const htmlCode = require("./src/renderHTML");
+let team = []
 
-
+//manager questions
 const managerqs=[{
     type: 'input',
     name: 'name',
@@ -34,6 +35,8 @@ const managerqs=[{
     },   
 
 ]
+
+//Other Questions
 const questions = [
     {
         type: 'list',
@@ -94,7 +97,9 @@ const questions = [
 ]
 
 
-let team = []
+
+
+//Load page and manager question function
 function init() {
     console.log(chalk.blue(`
     ********************************************************************
@@ -108,9 +113,8 @@ function init() {
        
     });
 }
-    //const added=job.generateObject() || ''
-
-       
+   
+ //Write to File Function 
         function writeToFile(file, data) { 
     
             fs.writeFile(file, data, (err) => {
@@ -119,9 +123,10 @@ function init() {
         
         }
 
-        
+//Initializer    
 init();
 
+//questions function
     function menu(){ inquirer.prompt(questions).then((data) => {
         
         
