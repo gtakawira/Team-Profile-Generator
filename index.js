@@ -2,7 +2,7 @@ const inquirer = require("inquirer")
 const fs=require('fs')
 const chalk = require('chalk');
 const job= require('./lib/classes');
-const htmlCode = require("./src/renderHTML");
+const htmlCode = require("./lib/renderHTML");
 let team = []
 
 //manager questions
