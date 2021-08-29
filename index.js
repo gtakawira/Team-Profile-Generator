@@ -116,7 +116,7 @@ function init() {
             fs.writeFile(file, data, (err) => {
             err ? console.log(err) : console.log("Success!");
         })
-        menu()
+        
         }
 
         
@@ -127,7 +127,7 @@ init();
         
         data.save=='Save' & data.title === 'Engineer' ? team.push(new job.Engineer(data.name, data.id, data.email,  data.username)) & menu():
         data.title === 'Intern' & data.save==='Save' ? team.push(new job.Intern(data.name, data.id, data.email,  data.school)) & menu():
-        data.title === 'Generate' ?  writeToFile('rendered.html',htmlCode(team)):console.log(' Cancelled') })}
+        data.title === 'Generate' ?  writeToFile('dist/rendered.html',htmlCode(team)) :console.log(' Cancelled') })}
             
         
     

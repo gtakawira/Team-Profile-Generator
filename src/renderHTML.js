@@ -56,10 +56,7 @@ const htmlCode = data => {
          
         ${fincards}
         
-        </div>
-        <a class="waves-effect waves-light btn-large" id="reset">CLEAR</a>
-      </div>
-    
+            
       <!--jQuery -->
       <script src="https://code.jquery.com/jquery-3.6.0.min.js"
         integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
@@ -69,8 +66,7 @@ const htmlCode = data => {
       <!-- materialize -->
       <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
     
-      <!-- our Script -->
-      <script src="./script.js"></script>
+      
     </body>
     
     </html>`
@@ -78,16 +74,18 @@ const htmlCode = data => {
 }
 function cardgen(data) {     
       
-
-  console.log('render6' ,data)
   return`<div class="col s12 m12 l4 clickable actCards">
   <div class="card teal darken-1">
   <div class="card-content white-text">
-  <span class="card-title">${data.getRole()}</span>
+  <span class="card-title">${data.getName()}</span>
   <ul id="list" > 
-  <li>${data.getName()}</li>
+  <li>Role: ${data.getRole()}</li>
   <li> ${data.getId()}</li>
   <li>${data.getEmail()}</li>
+  <li>${data.getRole()==='Manager' ? data.getofficeNumber():
+    data.getRole()==='Engineer' ? data.getGithub():
+    data.getSchool()}</li>
+
   </ul> 
   </div> 
   </div> 
